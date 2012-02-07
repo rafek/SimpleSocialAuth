@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>SimpleSocialAuth.MVC.dll</id>
-    <version>1.0.0</version>
+    <id>SimpleSocialAuth.MVC</id>
+    <version>0.0.1</version>
     <authors>rafek</authors>
     <owners>rafek</owners>
-    <licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
-    <projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
-    <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
+    <licenseUrl></licenseUrl>
+    <projectUrl>https://github.com/rafek/SimpleSocialAuth</projectUrl>
+    <iconUrl></iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Package description</description>
     <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
     <copyright>Copyright 2012</copyright>
-    <tags>Tag1 Tag2</tags>
+    <tags>social auth oauth asp.net-mvc</tags>
     <dependencies>
       <dependency id="SampleDependency" version="1.0" />
     </dependencies>
