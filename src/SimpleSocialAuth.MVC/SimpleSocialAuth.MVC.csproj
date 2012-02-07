@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Consumers\AuthorizationTracker.cs" />
     <Compile Include="Consumers\FacebookConsumer.cs" />
+    <Compile Include="Consumers\GoogleConsumer.cs" />
     <Compile Include="Handlers\AbstractAuthHandler.cs" />
     <Compile Include="Handlers\BasicUserData.cs" />
     <Compile Include="Handlers\FacebookHandler.cs" />
