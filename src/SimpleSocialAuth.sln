@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleSocialAuth.MVC", "SimpleSocialAuth.MVC\SimpleSocialAuth.MVC.csproj", "{167C820C-D944-497A-9F98-FEBED53B360F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleSocialAuth.MVC3", "SimpleSocialAuth.MVC3\SimpleSocialAuth.MVC3.csproj", "{167C820C-D944-497A-9F98-FEBED53B360F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
