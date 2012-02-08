@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <version>0.0.1</version>
+    <authors>rafek</authors>
+    <owners>rafek</owners>
+    <licenseUrl>http://licenseurl.com</licenseUrl>
+    <projectUrl>https://github.com/rafek/SimpleSocialAuth</projectUrl>
+    <iconUrl>http://iconurl.com</iconUrl>
+    <dependencies>
+      <dependency id="HtmlTags" version="1.0.0.54" />
+    </dependencies>
+    <id>SimpleSocialAuth.MVC3</id>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>test</description>
+    <releaseNotes>test</releaseNotes>
+    <copyright>Copyright 2012</copyright>
+    <tags>social auth oauth asp.net-mvc</tags>
+  </metadata>
+  <files>
+    <file src="content\SimpleAuthController.cs" target="content\Controllers\SimpleAuthController.cs" />
+    <file src="..\bin\Release\SimpleSocialAuth.MVC3.dll" target="lib\SimpleSocialAuth.MVC3.dll" />
+  </files>
+</package>
