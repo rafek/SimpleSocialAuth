@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Configuration;
+using System.Linq;
 using System.Web.Mvc;
 using System.Web.UI;
 using HtmlTags;
@@ -35,6 +37,28 @@ namespace SimpleSocialAuth.MVC3
         new MvcHtmlString(
           inlineStyles
             .After(includedStyles)
+            .ToHtmlString());
+    }
+
+    public static MvcHtmlString RenderAuthWarnings(this HtmlHelper htmlHelper)
+    {
+      var appSettingsKeys = 
+        ConfigurationManager.AppSettings.AllKeys;
+
+      var warningsContainer =
+        new HtmlTag("div");
+
+      if (appSettingsKeys.SingleOrDefault(k => k == "googleAppID") == null)
+      {
+        warningsContainer
+          .Append(
+            new HtmlTag("p")
+              .Text("Missing Google Client ID in configuration."));
+      }
+
+      return
+        new MvcHtmlString(
+          warningsContainer
             .ToHtmlString());
     }
 
