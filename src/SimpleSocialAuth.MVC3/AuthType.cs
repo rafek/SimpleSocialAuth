@@ -1,4 +1,4 @@
-﻿namespace SimpleSocialAuth.MVC
+﻿namespace SimpleSocialAuth.MVC3
 {
   public enum AuthType
   {

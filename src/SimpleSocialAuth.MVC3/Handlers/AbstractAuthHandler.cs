@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Web;
 
-namespace SimpleSocialAuth.MVC.Handlers
+namespace SimpleSocialAuth.MVC3.Handlers
 {
   public abstract class AbstractAuthHandler
   {

@@ -2,9 +2,9 @@
 using System.Web.Mvc;
 using System.Web.UI;
 using HtmlTags;
-using SimpleSocialAuth.MVC.Handlers;
+using SimpleSocialAuth.MVC3.Handlers;
 
-namespace SimpleSocialAuth.MVC
+namespace SimpleSocialAuth.MVC3
 {
   public static class HtmlExtensions
   {

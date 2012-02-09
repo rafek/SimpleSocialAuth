@@ -83,7 +83,7 @@
     <EmbeddedResource Include="Scripts\jquery.auth.js" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\auth_logos.png" />
+    <EmbeddedResource Include="Images\auth_logos.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

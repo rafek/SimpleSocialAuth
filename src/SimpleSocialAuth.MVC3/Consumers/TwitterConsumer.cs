@@ -5,7 +5,7 @@ using DotNetOpenAuth.Messaging;
 using DotNetOpenAuth.OAuth;
 using DotNetOpenAuth.OAuth.ChannelElements;
 
-namespace SimpleSocialAuth.MVC.Consumers
+namespace SimpleSocialAuth.MVC3.Consumers
 {
   internal class TwitterConsumer
   {

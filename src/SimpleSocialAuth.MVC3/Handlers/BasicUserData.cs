@@ -1,4 +1,4 @@
-namespace SimpleSocialAuth.MVC.Handlers
+namespace SimpleSocialAuth.MVC3.Handlers
 {
   public class BasicUserData
   {

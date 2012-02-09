@@ -3,7 +3,7 @@ using System.Web.Mvc;
 using System.Web.Security;
 using SimpleSocialAuth.MVC3;
 
-namespace SimpleSocialAuth.SampleWebApp.Controllers
+namespace $rootnamespace$.Controllers
 {
   public class SimpleAuthController : Controller
   {

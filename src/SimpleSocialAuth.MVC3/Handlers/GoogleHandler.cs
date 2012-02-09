@@ -6,9 +6,9 @@ using System.Net;
 using System.Web;
 using DotNetOpenAuth.OAuth2;
 using Newtonsoft.Json.Linq;
-using SimpleSocialAuth.MVC.Consumers;
+using SimpleSocialAuth.MVC3.Consumers;
 
-namespace SimpleSocialAuth.MVC.Handlers
+namespace SimpleSocialAuth.MVC3.Handlers
 {
   public class GoogleHandler : AbstractAuthHandler
   {

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
   <metadata>
-    <version>0.0.1</version>
+    <version>1.0.0-alpha</version>
     <authors>rafek</authors>
     <owners>rafek</owners>
     <licenseUrl>http://licenseurl.com</licenseUrl>
@@ -9,6 +9,7 @@
     <iconUrl>http://iconurl.com</iconUrl>
     <dependencies>
       <dependency id="HtmlTags" version="1.0.0.54" />
+      <dependency id="DotNetOpenAuth" version="[3.5.0.12037-refresh3]" />
     </dependencies>
     <id>SimpleSocialAuth.MVC3</id>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -18,7 +19,9 @@
     <tags>social auth oauth asp.net-mvc</tags>
   </metadata>
   <files>
-    <file src="content\SimpleAuthController.cs" target="content\Controllers\SimpleAuthController.cs" />
+    <file src="content\SimpleAuthController.cs.pp" target="content\Controllers\SimpleAuthController.cs.pp" />
+    <file src="content\LogIn.cshtml" target="content\Views\SimpleAuth\LogIn.cshtml" />
     <file src="..\bin\Release\SimpleSocialAuth.MVC3.dll" target="lib\SimpleSocialAuth.MVC3.dll" />
+    <file src="tools\install.ps1" target="tools\install.ps1" />
   </files>
 </package>
