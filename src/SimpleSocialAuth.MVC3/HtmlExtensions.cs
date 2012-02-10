@@ -43,23 +43,30 @@ namespace SimpleSocialAuth.MVC3
     public static MvcHtmlString RenderAuthWarnings(this HtmlHelper htmlHelper)
     {
       var appSettingsKeys = 
-        ConfigurationManager.AppSettings.AllKeys;
+        new[]
+          {
+            "googleAppID", "googleAppSecret",
+            "facebookAppID", "facebookAppSecret",
+            "twitterConsumerKey", "twitterConsumerSecret"
+          };
 
-      var warningsContainer =
-        new HtmlTag("div");
+      bool noValueForSetting =
+        appSettingsKeys
+          .Any(key => string.IsNullOrEmpty(ConfigurationManager.AppSettings[key]));
 
-      if (appSettingsKeys.SingleOrDefault(k => k == "googleAppID") == null)
+      string message = "";
+
+      if (noValueForSetting)
       {
-        warningsContainer
-          .Append(
-            new HtmlTag("p")
-              .Text("Missing Google Client ID in configuration."));
+        message =
+          new HtmlTag("p")
+            .Attr("style", "color: Red;")
+            .Text("Not all key and secrets are filled in a configuration file.")
+            .ToHtmlString();
       }
 
       return
-        new MvcHtmlString(
-          warningsContainer
-            .ToHtmlString());
+        new MvcHtmlString(message);
     }
 
     private static string WebResource(Type type, string resourcePath)
