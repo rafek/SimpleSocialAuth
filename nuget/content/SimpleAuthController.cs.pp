@@ -42,6 +42,15 @@ namespace $rootnamespace$.Controllers
         authHandler
           .ProcessAuthRequest(Request as HttpRequestWrapper);
 
+      if (userData == null)
+      {
+        TempData["authError"] =
+          "Authentication has failed.";
+
+        return
+          RedirectToAction("LogIn");
+      }
+
       FormsAuthentication.SetAuthCookie(userData.UserName, true);
 
       return 

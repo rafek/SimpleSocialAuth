@@ -10,6 +10,13 @@
 @Html.RenderAuthScript()
 @Html.RenderAuthWarnings()
 
+@if (TempData["authError"] != null)
+{
+  <p class="error-messasge">
+    @TempData["authError"]
+  </p>
+}
+
 @using (Html.BeginForm("Authenticate", "SimpleAuth", FormMethod.Post, new { id = "authForm" }))
 {
   @Html.AuthButtons()

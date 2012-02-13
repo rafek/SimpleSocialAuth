@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
   <metadata>
-    <version>1.0.2-alpha</version>
+    <version>1.0.3-alpha</version>
     <authors>rafek</authors>
     <owners>rafek</owners>
     <licenseUrl>http://www.opensource.org/licenses/ms-pl.html</licenseUrl>
@@ -14,7 +14,7 @@
     <id>SimpleSocialAuth.MVC3</id>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Super simple and easy to install package that allows web sites creators to seamlessly add OAuth support to their ASP.NET MVC 3 sites. Supporting Twitter, Google and Facebook.</description>
-    <releaseNotes />
+    <releaseNotes>Authentication failed error handling has been added.</releaseNotes>
     <copyright>Copyright 2012</copyright>
     <tags>social auth oauth asp.net-mvc</tags>
   </metadata>
