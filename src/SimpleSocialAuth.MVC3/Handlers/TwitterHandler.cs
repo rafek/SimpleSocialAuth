@@ -28,7 +28,8 @@ namespace SimpleSocialAuth.MVC3.Handlers
           ? new BasicUserData
           {
             UserId = userId.ToString(),
-            UserName = screenName
+            UserName = screenName,
+            PictureUrl = string.Format("http://api.twitter.com/1/users/profile_image/{0}.png", screenName)
           }
           : null;
     }

@@ -63,7 +63,8 @@ namespace SimpleSocialAuth.MVC3.Handlers
           new BasicUserData
           {
             UserId = jsonObject["id"].ToString(),
-            UserName = jsonObject["name"].ToString()
+            UserName = jsonObject["name"].ToString(),
+            PictureUrl = string.Format("http://graph.facebook.com/{0}/picture", jsonObject["id"])
           };
       }
     }

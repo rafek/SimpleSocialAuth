@@ -4,5 +4,6 @@ namespace SimpleSocialAuth.MVC3.Handlers
   {
     public string UserId { get; set; }
     public string UserName { get; set; }
+    public string PictureUrl { get; set; }
   }
 }
