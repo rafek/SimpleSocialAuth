@@ -9,6 +9,12 @@ namespace $rootnamespace$.Controllers
   {
     public ActionResult LogIn()
     {
+	  if (Request.IsAuthenticated) 
+	  {
+	    return
+          RedirectToAction("Index", "Home");		
+	  }
+	
       Session["ReturnUrl"] =
         Request.QueryString["returnUrl"];
 
@@ -37,7 +43,6 @@ namespace $rootnamespace$.Controllers
       var authHandler =
         AuthHandlerFactory.CreateAuthHandler(authType);
 
-      // TODO: HI think of if ids are unique among differenct providers
       var userData = 
         authHandler
           .ProcessAuthRequest(Request as HttpRequestWrapper);
@@ -51,6 +56,9 @@ namespace $rootnamespace$.Controllers
           RedirectToAction("LogIn");
       }
 
+	  // TODO: Here you can check if such user exists in your database, etc.
+	  
+	  // NOTE: this is just simple usage of setting AuthCookie
       FormsAuthentication.SetAuthCookie(userData.UserName, true);
 
       return 

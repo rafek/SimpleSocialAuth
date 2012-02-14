@@ -43,6 +43,11 @@ namespace SimpleSocialAuth.MVC3.Handlers
       IAuthorizationState authorization =
         googleConsumer.ProcessUserAuthorization();
 
+      if (authorization.AccessToken == null)
+      {
+        return null;
+      }
+
       var graphRequest =
         WebRequest
           .Create("https://www.googleapis.com/oauth2/v1/userinfo?access_token=" + Uri.EscapeDataString(authorization.AccessToken));

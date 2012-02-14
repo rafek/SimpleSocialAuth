@@ -43,6 +43,11 @@ namespace SimpleSocialAuth.MVC3.Handlers
       IAuthorizationState authorization =
         facebookConsumer.ProcessUserAuthorization();
 
+      if (authorization.AccessToken == null)
+      {
+        return null;
+      }
+
       var graphRequest =
         WebRequest
           .Create("https://graph.facebook.com/me?access_token=" + Uri.EscapeDataString(authorization.AccessToken));
