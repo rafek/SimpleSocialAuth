@@ -3,6 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleSocialAuth.MVC3", "SimpleSocialAuth.MVC3\SimpleSocialAuth.MVC3.csproj", "{167C820C-D944-497A-9F98-FEBED53B360F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleSocialAuth.Core", "SimpleSocialAuth.Core\SimpleSocialAuth.Core.csproj", "{AF30D585-9D13-4FCD-88A4-C5E6F6F31F80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleSocialAuth.Mvc4", "SimpleSocialAuth.Mvc4\SimpleSocialAuth.Mvc4.csproj", "{84AD9A6B-769E-4849-BC67-9E043A938469}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{2F355BD0-7984-427B-9D62-3D515B9AE0D0}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +24,14 @@ Global
 		{167C820C-D944-497A-9F98-FEBED53B360F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{167C820C-D944-497A-9F98-FEBED53B360F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{167C820C-D944-497A-9F98-FEBED53B360F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF30D585-9D13-4FCD-88A4-C5E6F6F31F80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF30D585-9D13-4FCD-88A4-C5E6F6F31F80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF30D585-9D13-4FCD-88A4-C5E6F6F31F80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF30D585-9D13-4FCD-88A4-C5E6F6F31F80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84AD9A6B-769E-4849-BC67-9E043A938469}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84AD9A6B-769E-4849-BC67-9E043A938469}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84AD9A6B-769E-4849-BC67-9E043A938469}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84AD9A6B-769E-4849-BC67-9E043A938469}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
