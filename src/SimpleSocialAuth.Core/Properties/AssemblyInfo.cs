@@ -1,16 +1,15 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
-using System.Web.UI;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 
-[assembly: AssemblyTitle("SimpleSocialAuth.MVC3")]
+[assembly: AssemblyTitle("SimpleSocialAuth.Core")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SimpleSocialAuth.MVC3")]
+[assembly: AssemblyProduct("SimpleSocialAuth.Core")]
 [assembly: AssemblyCopyright("Copyright ©  2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -23,7 +22,7 @@ using System.Web.UI;
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 
-[assembly: Guid("844f8e43-4daa-41f4-8350-e59797994014")]
+[assembly: Guid("94962b4c-4594-4de6-906d-edae11f51480")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -38,6 +37,3 @@ using System.Web.UI;
 
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-[assembly: WebResource("SimpleSocialAuth.MVC3.Scripts.jquery.auth.js", "application/x-javascript")]
-[assembly: WebResource("SimpleSocialAuth.MVC3.Stylesheets.auth.css", "text/css")]
-[assembly: WebResource("SimpleSocialAuth.MVC3.Images.auth_logos.png", "image/png")]

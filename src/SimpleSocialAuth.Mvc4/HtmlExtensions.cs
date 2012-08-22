@@ -4,8 +4,9 @@ using System.Linq;
 using System.Web.Mvc;
 using System.Web.UI;
 using HtmlTags;
+using SimpleSocialAuth.MVC3;
 
-namespace SimpleSocialAuth.MVC3
+namespace SimpleSocialAuth.Mvc4
 {
     public static class HtmlExtensions
     {
@@ -14,8 +15,7 @@ namespace SimpleSocialAuth.MVC3
             return
                 new MvcHtmlString(
                     new HtmlTag("script")
-                        .Attr("src",
-                              WebResource(typeof (HtmlExtensions), "SimpleSocialAuth.MVC3.Scripts.jquery.auth.js"))
+                        .Attr("src", WebResource(typeof (Utils), "SimpleSocialAuth.MVC3.Scripts.jquery.auth.js"))
                         .Attr("type", @"text/javascript")
                         .ToHtmlString());
         }
@@ -26,12 +26,12 @@ namespace SimpleSocialAuth.MVC3
                 new HtmlTag("style")
                     .Attr("type", "text/css")
                     .Text(@".largeBtn { background-image: url(" +
-                          WebResource(typeof (HtmlExtensions), "SimpleSocialAuth.MVC3.Images.auth_logos.png") + "); }");
+                          WebResource(typeof (Utils), "SimpleSocialAuth.MVC3.Images.auth_logos.png") + "); }");
 
             var includedStyles =
                 new HtmlTag("link")
                     .Attr("rel", "stylesheet")
-                    .Attr("href", WebResource(typeof (HtmlExtensions), "SimpleSocialAuth.MVC3.Stylesheets.auth.css"))
+                    .Attr("href", WebResource(typeof (Utils), "SimpleSocialAuth.MVC3.Stylesheets.auth.css"))
                     .Attr("type", @"text/css");
 
             return

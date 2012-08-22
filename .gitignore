@@ -1,0 +1,5 @@
+lib/*
+bin/Debug/*
+src/_ReSharper*
+src/packages/*
+*.DotSettings.user
