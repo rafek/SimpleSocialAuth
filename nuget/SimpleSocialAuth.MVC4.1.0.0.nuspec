@@ -21,8 +21,8 @@
     <tags>social auth oauth asp.net-mvc</tags>
   </metadata>
   <files>
-    <file src="content\SimpleAuthController.cs.pp" target="content\Controllers\SimpleAuthController.cs.pp" />
-    <file src="content\LogIn.cshtml" target="content\Views\SimpleAuth\LogIn.cshtml" />
+    <file src="content.mvc4\SimpleAuthController.cs.pp" target="content\Controllers\SimpleAuthController.cs.pp" />
+    <file src="content.mvc4\LogIn.cshtml" target="content\Views\SimpleAuth\LogIn.cshtml" />
 	
 	<!-- ks 6/10/13 - This was missing from the source, not sure what it does -->
     <!--<file src="content\web.config.transform" target="content\web.config.transform" />-->
