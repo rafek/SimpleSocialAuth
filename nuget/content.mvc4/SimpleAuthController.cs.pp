@@ -6,66 +6,54 @@ using SimpleSocialAuth.Mvc4;
 
 namespace $rootnamespace$.Controllers
 {
-  public class SimpleAuthController : Controller
-  {
-    public ActionResult LogIn()
-    {
-	  if (Request.IsAuthenticated) 
-	  {
-	    return
-          RedirectToAction("Index", "Home");		
-	  }
-	
-      Session["ReturnUrl"] =
-        Request.QueryString["returnUrl"];
+	public class SimpleAuthController : Controller
+	{
+		public ActionResult LogIn()
+		{
+			if (Request.IsAuthenticated)
+			{
+				return RedirectToAction("Index", "Home");
+			}
 
-      return View();
-    }
+			Session["ReturnUrl"] = Request.QueryString["returnUrl"];
 
-    // TODO: HI Errors handling
-    [HttpPost]
-    public ActionResult Authenticate(AuthType authType)
-    {
-      var authHandler =
-        AuthHandlerFactory.CreateAuthHandler(authType);
+			return View();
+		}
 
-      string redirectUrl =
-        authHandler
-          .PrepareAuthRequest(
-            Request,
-            Url.Action("DoAuth", new { authType = (int)authType }));
+		// TODO: HI Errors handling
+		[HttpPost]
+		public ActionResult Authenticate(string authType)
+		{
+			var authHandler = AuthHandlerFactory.Create(authType);
+			var authContext = new PrepareAuthenticationContext(
+				CurrentContextSession.Instance, 
+				Request.Url, 
+				(string)Session["ReturnUrl"]);
+			string redirectUrl = authHandler.PrepareAuthRequest(authContext);
+			return Redirect(redirectUrl);
+		}
 
-      return
-        Redirect(redirectUrl);
-    }
+		public ActionResult DoAuth(string authType)
+		{
+			var authHandler = AuthHandlerFactory.Create(authType);
+			var authContext = new ProcessAuthenticationContext(CurrentContextSession.Instance, Request.Url);
+			var userData = authHandler.ProcessAuthRequest(authContext);
 
-    public ActionResult DoAuth(AuthType authType)
-    {
-      var authHandler =
-        AuthHandlerFactory.CreateAuthHandler(authType);
+			if (userData == null)
+			{
+				TempData["authError"] = "Authentication has failed.";
 
-      var userData = 
-        authHandler
-          .ProcessAuthRequest(Request as HttpRequestWrapper);
+				return RedirectToAction("LogIn");
+			}
 
-      if (userData == null)
-      {
-        TempData["authError"] =
-          "Authentication has failed.";
+			// TODO: Here you can check if such user exists in your database, etc.
 
-        return
-          RedirectToAction("LogIn");
-      }
+			// NOTE: this is just simple usage of setting AuthCookie
+			FormsAuthentication.SetAuthCookie(userData.UserName, true);
 
-	  // TODO: Here you can check if such user exists in your database, etc.
-	  
-	  // NOTE: this is just simple usage of setting AuthCookie
-      FormsAuthentication.SetAuthCookie(userData.UserName, true);
-
-      return 
-        Session["ReturnUrl"] != null
-        ? (ActionResult) Redirect((string) Session["ReturnUrl"])
-        : RedirectToAction("Index", "Home");
-    }
-  }
+			return Session["ReturnUrl"] != null
+			  ? (ActionResult)Redirect((string)Session["ReturnUrl"])
+			  : RedirectToAction("Index", "Home");
+		}
+	}
 }

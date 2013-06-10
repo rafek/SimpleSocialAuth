@@ -1,34 +1,34 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
-  <metadata>
-    <version>1.0.0</version>
-    <authors>rafek</authors>
-    <owners>rafek</owners>
-    <licenseUrl>http://www.opensource.org/licenses/ms-pl.html</licenseUrl>
-    <projectUrl>https://github.com/rafek/SimpleSocialAuth</projectUrl>
-    <iconUrl>http://i.imgur.com/n1Q5A.png</iconUrl>
-    <dependencies>
-      <dependency id="HtmlTags" version="1.0.0.54" />
-      <dependency id="DotNetOpenAuth" version="4.3.0" />
-      <dependency id="Newtonsoft.Json" version="4.0.8" />
-    </dependencies>
-    <id>SimpleSocialAuth.MVC4</id>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Super simple and easy to install package that allows web sites creators to seamlessly add OAuth support to their ASP.NET MVC 4 sites. Supporting Twitter, Google and Facebook.</description>
-    <summary />
-    <releaseNotes>Profile picture for Facebook fix.</releaseNotes>
-    <copyright>Copyright 2012</copyright>
-    <tags>social auth oauth asp.net-mvc</tags>
-  </metadata>
-  <files>
+	<metadata>
+		<version>1.0.1</version>
+		<authors>smithkl42</authors>
+		<owners>rafek</owners>
+		<licenseUrl>http://www.opensource.org/licenses/ms-pl.html</licenseUrl>
+		<projectUrl>https://github.com/rafek/SimpleSocialAuth</projectUrl>
+		<iconUrl>http://i.imgur.com/n1Q5A.png</iconUrl>
+		<dependencies>
+			<dependency id="HtmlTags" version="1.0.0.54" />
+			<dependency id="DotNetOpenAuth" version="4.3.0" />
+			<dependency id="Newtonsoft.Json" version="4.0.8" />
+		</dependencies>
+		<id>SimpleSocialAuth.MVC4</id>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>Super simple and easy to install package that allows web sites creators to seamlessly add OAuth support to their ASP.NET MVC 4 sites. Supporting Twitter, Google and Facebook.</description>
+		<summary />
+		<releaseNotes>Adds support for ASP.NET MVC4.</releaseNotes>
+		<copyright>Copyright 2012-2013</copyright>
+		<tags>social auth oauth asp.net-mvc</tags>
+	</metadata>
+	<files>
 	
-	<!-- ks 6/10/13 - This was missing from the source, not sure what it does -->
-    <!--<file src="content\web.config.transform" target="content\web.config.transform" />-->
+	<!-- ks 6/10/13 - This was missing from the source, not sure what it's needed for -->
+		<!--<file src="content\web.config.transform" target="content\web.config.transform" />-->
 
-    <file src="content.mvc4\SimpleAuthController.cs.pp" target="content\Controllers\SimpleAuthController.cs.pp" />
-    <file src="content.mvc4\LogIn.cshtml" target="content\Views\SimpleAuth\LogIn.cshtml" />
-    <file src="..\bin\Release\SimpleSocialAuth.Core.dll" target="lib\net40-full\SimpleSocialAuth.Core.dll" />
-    <file src="..\bin\Release\SimpleSocialAuth.Mvc4.dll" target="lib\net40-full\SimpleSocialAuth.Mvc4.dll" />
-    <file src="tools\install.ps1" target="tools\install.ps1" />
-  </files>
+		<file src="content.mvc4\SimpleAuthController.cs.pp" target="content\Controllers\SimpleAuthController.cs.pp" />
+		<file src="content.mvc4\LogIn.cshtml" target="content\Views\SimpleAuth\LogIn.cshtml" />
+		<file src="..\bin\Release\SimpleSocialAuth.Core.dll" target="lib\net40-full\SimpleSocialAuth.Core.dll" />
+		<file src="..\bin\Release\SimpleSocialAuth.Mvc4.dll" target="lib\net40-full\SimpleSocialAuth.Mvc4.dll" />
+		<file src="tools\install.ps1" target="tools\install.ps1" />
+	</files>
 </package>

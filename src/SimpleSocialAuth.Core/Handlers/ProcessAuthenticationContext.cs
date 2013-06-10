@@ -1,14 +1,16 @@
+using System;
+
 namespace SimpleSocialAuth.Core.Handlers
 {
     public class ProcessAuthenticationContext
     {
-        public ProcessAuthenticationContext(IHttpRequest request, ISessionStorage sessionStorage)
+        public ProcessAuthenticationContext(ISessionStorage sessionStorage, Uri requestUri)
         {
-            Request = request;
+            RequestUri = requestUri;
             SessionStorage = sessionStorage;
         }
 
-        public IHttpRequest Request { get; private set; }
+        public Uri RequestUri { get; private set; }
         public ISessionStorage SessionStorage { get; private set; }
     }
 }
