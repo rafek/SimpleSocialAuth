@@ -21,7 +21,7 @@ var auth = {
             return;
         }
 
-        $("#authType").val(provider.type);
+        $("#authType").val(provider.name);
 
         $("#authForm").submit();
     }
