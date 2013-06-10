@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using System.Web.Security;
 using SimpleSocialAuth.Core;
+using SimpleSocialAuth.Core.Handlers;
 using SimpleSocialAuth.Mvc4;
 
 namespace $rootnamespace$.Controllers
