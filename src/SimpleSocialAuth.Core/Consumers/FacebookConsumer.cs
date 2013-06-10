@@ -12,8 +12,8 @@ namespace SimpleSocialAuth.Core.Consumers
                     AuthorizationEndpoint = new Uri("https://graph.facebook.com/oauth/authorize")
                 };
 
-        public FacebookConsumer()
-            : base(FacebookDescription)
+        public FacebookConsumer(string clientIdentifier, string clientSecret)
+            : base(FacebookDescription, clientIdentifier, clientSecret)
         {
             AuthorizationTracker =
                 new AuthorizationTracker();

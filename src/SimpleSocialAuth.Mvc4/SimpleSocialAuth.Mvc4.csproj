@@ -33,8 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="HtmlTags">
-      <HintPath>..\..\lib\HtmlTags.1.1.0.97\lib\4.0\HtmlTags.dll</HintPath>
+    <Reference Include="HtmlTags, Version=1.2.0.150, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\HtmlTags.1.2.0.150\lib\4.0\HtmlTags.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />

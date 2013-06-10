@@ -13,12 +13,9 @@ namespace SimpleSocialAuth.Core.Handlers
     /// <remarks>Requires that the "googleAppID" and "googleAppSecret" is specified in the appSettings in web/app.config.</remarks>
     public class GoogleHandler : IAuthenticationHandler
     {
-        private static readonly GoogleConsumer googleConsumer =
-            new GoogleConsumer
-                {
-                    ClientIdentifier = ConfigurationManager.AppSettings["googleAppID"],
-                    ClientSecret = ConfigurationManager.AppSettings["googleAppSecret"]
-                };
+        private static readonly GoogleConsumer googleConsumer = new GoogleConsumer(
+            ConfigurationManager.AppSettings["googleAppID"], 
+            ConfigurationManager.AppSettings["googleAppSecret"]);
 
         #region IAuthenticationHandler Members
 

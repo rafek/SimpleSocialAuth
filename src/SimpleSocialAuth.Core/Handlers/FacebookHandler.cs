@@ -10,11 +10,9 @@ namespace SimpleSocialAuth.Core.Handlers
     public class FacebookHandler : IAuthenticationHandler
     {
         private static readonly FacebookConsumer facebookConsumer =
-            new FacebookConsumer
-                {
-                    ClientIdentifier = ConfigurationManager.AppSettings["facebookAppID"],
-                    ClientSecret = ConfigurationManager.AppSettings["facebookAppSecret"]
-                };
+            new FacebookConsumer(
+				ConfigurationManager.AppSettings["facebookAppID"],
+				ConfigurationManager.AppSettings["facebookAppSecret"]);
 
         #region IAuthenticationHandler Members
 
