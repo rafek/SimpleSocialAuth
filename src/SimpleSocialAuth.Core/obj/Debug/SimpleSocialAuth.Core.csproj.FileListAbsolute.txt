@@ -1,8 +1,0 @@
-D:\projects\csharp\Gauffin\SimpleSocialAuth\src\SimpleSocialAuth.Core\obj\Debug\SimpleSocialAuth.Core.csprojResolveAssemblyReference.cache
-D:\projects\csharp\Gauffin\SimpleSocialAuth\src\SimpleSocialAuth.Core\bin\Debug\SimpleSocialAuth.Core.dll
-D:\projects\csharp\Gauffin\SimpleSocialAuth\src\SimpleSocialAuth.Core\bin\Debug\SimpleSocialAuth.Core.pdb
-D:\projects\csharp\Gauffin\SimpleSocialAuth\src\SimpleSocialAuth.Core\bin\Debug\Newtonsoft.Json.dll
-D:\projects\csharp\Gauffin\SimpleSocialAuth\src\SimpleSocialAuth.Core\bin\Debug\Newtonsoft.Json.xml
-D:\projects\csharp\Gauffin\SimpleSocialAuth\src\SimpleSocialAuth.Core\obj\Debug\SimpleSocialAuth.Core.dll
-D:\projects\csharp\Gauffin\SimpleSocialAuth\src\SimpleSocialAuth.Core\obj\Debug\SimpleSocialAuth.Core.pdb
-D:\projects\csharp\Gauffin\SimpleSocialAuth\src\SimpleSocialAuth.Core\bin\Debug\DotNetOpenAuth.xml
