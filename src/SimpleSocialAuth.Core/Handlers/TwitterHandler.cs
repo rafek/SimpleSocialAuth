@@ -15,7 +15,7 @@ namespace SimpleSocialAuth.Core.Handlers
         public string PrepareAuthRequest(PrepareAuthenticationContext context)
         {
             var callback =
-                new Uri(Utils.GetUrlBase(context.Request) + context.RedirectPath);
+                new Uri(Utils.GetUrlBase(context.RequestUri) + context.RedirectPath);
 
             var consumer = new TwitterConsumer(context.SessionStorage);
             return consumer

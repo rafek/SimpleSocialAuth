@@ -7,7 +7,7 @@ namespace SimpleSocialAuth.MVC3
     /// <summary>
     /// Takes a request and adapts it to our authentication framework.
     /// </summary>
-    internal class RequestAdapter : IHttpRequest
+    public class RequestAdapter : IHttpRequest
     {
         private readonly HttpRequestBase _request;
 

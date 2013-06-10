@@ -36,7 +36,7 @@ using System.Web.UI;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 
-[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
 [assembly: WebResource("SimpleSocialAuth.MVC3.Scripts.jquery.auth.js", "application/x-javascript")]
 [assembly: WebResource("SimpleSocialAuth.MVC3.Stylesheets.auth.css", "text/css")]

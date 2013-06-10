@@ -1,7 +1,8 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
-using SimpleSocialAuth.MVC4;
+using SimpleSocialAuth.Core;
+using SimpleSocialAuth.Mvc4;
 
 namespace $rootnamespace$.Controllers
 {
