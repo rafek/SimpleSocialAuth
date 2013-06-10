@@ -25,7 +25,7 @@ namespace SimpleSocialAuth.Mvc4
             var inlineStyles =
                 new HtmlTag("style")
                     .Attr("type", "text/css")
-                    .Text(@".largeBtn { background-image: url(" +
+                    .Text(@".simpleAuthButton { background-image: url(" +
                           WebResource(typeof (Utils), "SimpleSocialAuth.MVC4.Images.auth_logos.png") + "); }");
 
             var includedStyles =
@@ -88,17 +88,17 @@ namespace SimpleSocialAuth.Mvc4
                     .Append("a",
                             ht => ht
                                       .Attr("href", "javascript:auth.signin('twitter')")
-                                      .AddClasses("largeBtn", "twitter")
+                                      .AddClasses("simpleAuthButton", "twitter")
                                       .Text("twitter"))
                     .Append("a",
                             ht => ht
                                       .Attr("href", "javascript:auth.signin('facebook')")
-                                      .AddClasses("largeBtn", "facebook")
+                                      .AddClasses("simpleAuthButton", "facebook")
                                       .Text("facebook"))
                     .Append("a",
                             ht => ht
                                       .Attr("href", "javascript:auth.signin('google')")
-                                      .AddClasses("largeBtn", "google")
+                                      .AddClasses("simpleAuthButton", "google")
                                       .Text("google"))
                     .ToHtmlString();
 

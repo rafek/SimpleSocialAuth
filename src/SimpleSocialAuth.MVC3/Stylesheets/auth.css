@@ -1,4 +1,4 @@
-﻿.largeBtn {
+﻿.simpleAuthButton {
     width: 100px;
     margin: 5px;
     height: 60px;
@@ -9,14 +9,14 @@
     text-indent: -9999px;
 }
 
-.largeBtn.twitter {
+.simpleAuthButton.twitter {
     background-position: -1px -249px;
 }
 
-.largeBtn.facebook {
+.simpleAuthButton.facebook {
     background-position: -1px -187px;
 }
 
-.largeBtn.google {
+.simpleAuthButton.google {
     background-position: -1px -1px;
 }
