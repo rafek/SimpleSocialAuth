@@ -21,11 +21,9 @@ namespace SimpleSocialAuth.Core.Handlers
 
         public string PrepareAuthRequest(PrepareAuthenticationContext context)
         {
-            var authorization =
-                googleConsumer.ProcessUserAuthorization();
+            var authorization = googleConsumer.ProcessUserAuthorization();
 
-            var callback =
-                new Uri(Utils.GetUrlBase(context.RequestUri) + context.RedirectPath);
+            var callback = new Uri(Utils.GetUrlBase(context.RequestUri) + context.RedirectPath);
 
             if (authorization == null)
             {
