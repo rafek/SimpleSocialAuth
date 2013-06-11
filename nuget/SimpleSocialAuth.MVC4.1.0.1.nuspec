@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
 	<metadata>
 		<version>1.0.1</version>
-		<authors>smithkl42</authors>
+		<authors>rafek, smithkl42</authors>
 		<owners>rafek</owners>
 		<licenseUrl>http://www.opensource.org/licenses/ms-pl.html</licenseUrl>
 		<projectUrl>https://github.com/rafek/SimpleSocialAuth</projectUrl>
@@ -29,6 +29,8 @@
 		<file src="content.mvc4\LogIn.cshtml" target="content\Views\SimpleAuth\LogIn.cshtml" />
 		<file src="..\src\SimpleSocialAuth.Mvc4\bin\Release\SimpleSocialAuth.Core.dll" target="lib\net40-full\SimpleSocialAuth.Core.dll" />
 		<file src="..\src\SimpleSocialAuth.Mvc4\bin\Release\SimpleSocialAuth.Mvc4.dll" target="lib\net40-full\SimpleSocialAuth.Mvc4.dll" />
+		<file src="..\src\SimpleSocialAuth.Mvc4\Scripts\SimpleSocialAuth.js" target="content\Scripts\SimpleSocialAuth.js" />
+		<file src="..\src\SimpleSocialAuth.Mvc4\Stylesheets\SimpleSocialAuth.css" target="content\Content\SimpleSocialAuth.css" />
 		<file src="tools\install.ps1" target="tools\install.ps1" />
 	</files>
 </package>

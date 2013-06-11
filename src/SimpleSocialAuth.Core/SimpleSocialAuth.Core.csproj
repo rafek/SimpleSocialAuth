@@ -138,6 +138,7 @@
     <Compile Include="Consumers\FacebookConsumer.cs" />
     <Compile Include="Consumers\GoogleConsumer.cs" />
     <Compile Include="Consumers\InMemoryTokenManager.cs" />
+    <Compile Include="CurrentContextSession.cs" />
     <Compile Include="ISessionStorage.cs" />
     <Compile Include="Consumers\TwitterConsumer.cs" />
     <Compile Include="Handlers\AbstractAuthHandler.cs" />

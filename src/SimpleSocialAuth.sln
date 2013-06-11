@@ -16,8 +16,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{2F355B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{415946F4-2526-4B13-8F67-CB42C5F72739}"
 	ProjectSection(SolutionItems) = preProject
-		..\nuget\SimpleSocialAuth.MVC3.1.0.0-refresh4.nuspec = ..\nuget\SimpleSocialAuth.MVC3.1.0.0-refresh4.nuspec
-		..\nuget\SimpleSocialAuth.MVC4.1.0.0.nuspec = ..\nuget\SimpleSocialAuth.MVC4.1.0.0.nuspec
+		..\nuget\SimpleSocialAuth.MVC3.1.0.1.nuspec = ..\nuget\SimpleSocialAuth.MVC3.1.0.1.nuspec
+		..\nuget\SimpleSocialAuth.MVC4.1.0.1.nuspec = ..\nuget\SimpleSocialAuth.MVC4.1.0.1.nuspec
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "content.mvc3", "content.mvc3", "{B153952A-5808-46B4-A2C0-2FA1A7C7A49E}"
@@ -30,6 +30,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "content.mvc4", "content.mvc
 	ProjectSection(SolutionItems) = preProject
 		..\nuget\content.mvc4\LogIn.cshtml = ..\nuget\content.mvc4\LogIn.cshtml
 		..\nuget\content.mvc4\SimpleAuthController.cs.pp = ..\nuget\content.mvc4\SimpleAuthController.cs.pp
+		..\nuget\content.mvc4\SimpleSocialAuthBundleConfig.cs.pp = ..\nuget\content.mvc4\SimpleSocialAuthBundleConfig.cs.pp
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{546A9A81-1097-4571-A525-57E2125F294E}"

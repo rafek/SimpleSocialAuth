@@ -69,7 +69,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CurrentContextSession.cs" />
     <Compile Include="HtmlExtensions.cs" />
     <Compile Include="NamespaceDoc.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,10 +78,10 @@
     <EmbeddedResource Include="Images\auth_logos.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Scripts\jquery.auth.js" />
+    <EmbeddedResource Include="Scripts\SimpleSocialAuth.js" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Stylesheets\auth.css" />
+    <EmbeddedResource Include="Stylesheets\SimpleSocialAuth.css" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SimpleSocialAuth.Core\SimpleSocialAuth.Core.csproj">
@@ -98,7 +97,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <PropertyGroup>
-    <PostBuildEvent>nuget pack $(SolutionDir)..\nuget\SimpleSocialAuth.MVC4.1.0.0.nuspec</PostBuildEvent>
+    <PostBuildEvent>nuget pack $(SolutionDir)..\nuget\SimpleSocialAuth.MVC4.1.0.1.nuspec -OutputDirectory $(SolutionDir)..\nuget\</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
