@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
 	<metadata>
-		<version>1.0.5</version>
+		<version>1.0.6</version>
 		<authors>rafek, smithkl42</authors>
 		<owners>rafek</owners>
 		<licenseUrl>http://www.opensource.org/licenses/ms-pl.html</licenseUrl>
@@ -25,7 +25,7 @@
 	<!-- ks 6/10/13 - This was missing from the source, not sure what it's needed for -->
 		<!--<file src="content\web.config.transform" target="content\web.config.transform" />-->
 
-		<file src="content.mvc4\SimpleAuthController.cs.pp" target="content\Controllers\SimpleAuthController.cs.pp" />
+		<file src="content.common\SimpleAuthController.cs.pp" target="content\Controllers\SimpleAuthController.cs.pp" />
 		<file src="content.mvc4\SimpleSocialAuthBundleConfig.cs.pp" target="content\App_Start\SimpleSocialAuthBundleConfig.cs.pp" />
 		<file src="content.mvc4\LogIn.cshtml" target="content\Views\SimpleAuth\LogIn.cshtml" />
 		<file src="..\src\SimpleSocialAuth.Mvc4\bin\Release\SimpleSocialAuth.Core.dll" target="lib\net40-full\SimpleSocialAuth.Core.dll" />

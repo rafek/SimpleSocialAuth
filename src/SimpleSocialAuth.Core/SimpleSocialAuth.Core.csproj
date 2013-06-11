@@ -141,7 +141,7 @@
     <Compile Include="CurrentContextSession.cs" />
     <Compile Include="ISessionStorage.cs" />
     <Compile Include="Consumers\TwitterConsumer.cs" />
-    <Compile Include="Handlers\AbstractAuthHandler.cs" />
+    <Compile Include="Handlers\IAuthenticationHandler.cs" />
     <Compile Include="Handlers\BasicUserData.cs" />
     <Compile Include="Handlers\FacebookHandler.cs" />
     <Compile Include="Handlers\GoogleHandler.cs" />

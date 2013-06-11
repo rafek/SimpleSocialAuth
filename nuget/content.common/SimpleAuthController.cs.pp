@@ -3,7 +3,6 @@ using System.Web.Mvc;
 using System.Web.Security;
 using SimpleSocialAuth.Core;
 using SimpleSocialAuth.Core.Handlers;
-using SimpleSocialAuth.Mvc4;
 
 namespace $rootnamespace$.Controllers
 {
@@ -27,9 +26,9 @@ namespace $rootnamespace$.Controllers
 		{
 			var authHandler = AuthHandlerFactory.Create(authType);
 			var authContext = new PrepareAuthenticationContext(
-				CurrentContextSession.Instance, 
-				Request.Url, 
-				(string)Session["ReturnUrl"]);
+				CurrentContextSession.Instance,
+				Request.Url,
+				Url.Action("DoAuth", new { authType }));
 			string redirectUrl = authHandler.PrepareAuthRequest(authContext);
 			return Redirect(redirectUrl);
 		}

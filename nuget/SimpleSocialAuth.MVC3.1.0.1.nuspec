@@ -21,8 +21,7 @@
     <tags>social auth oauth asp.net-mvc</tags>
   </metadata>
   <files>
-    <file src="content.mvc3\SimpleAuthController.cs.pp" target="content\Controllers\SimpleAuthController.cs.pp" />
-    <file src="content.mvc4\SimpleSocialAuthBundleConfig.cs.pp" target="content\App_Start\SimpleAuthController.cs.pp" />
+    <file src="content.common\SimpleAuthController.cs.pp" target="content\Controllers\SimpleAuthController.cs.pp" />
     <file src="content.mvc3\LogIn.cshtml" target="content\Views\SimpleAuth\LogIn.cshtml" />
     <!--<file src="content\web.config.transform" target="content\web.config.transform" />-->
     <file src="..\src\SimpleSocialAuth.MVC3\bin\Release\SimpleSocialAuth.Core.dll" target="lib\net40-full\SimpleSocialAuth.Core.dll" />

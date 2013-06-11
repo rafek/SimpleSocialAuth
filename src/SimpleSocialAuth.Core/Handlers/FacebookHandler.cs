@@ -20,13 +20,11 @@ namespace SimpleSocialAuth.Core.Handlers
 		{
 			var authorization = facebookConsumer.ProcessUserAuthorization();
 
-			var callback =
-				new Uri(Utils.GetUrlBase(context.RequestUri) + context.RedirectPath);
+			var callback = new Uri(Utils.GetUrlBase(context.RequestUri) + context.RedirectPath);
 
 			if (authorization == null)
 			{
-				return
-					facebookConsumer
+				return facebookConsumer
 						.PrepareRequestUserAuthorization(returnTo: callback)
 						.Headers["Location"];
 			}
@@ -36,16 +34,14 @@ namespace SimpleSocialAuth.Core.Handlers
 
 		public BasicUserData ProcessAuthRequest(ProcessAuthenticationContext context)
 		{
-			var authorization =
-				facebookConsumer.ProcessUserAuthorization();
+			var authorization = facebookConsumer.ProcessUserAuthorization();
 
 			if (authorization.AccessToken == null)
 			{
 				return null;
 			}
 
-			var graphRequest =
-				WebRequest
+			var graphRequest = WebRequest
 					.Create("https://graph.facebook.com/me?access_token=" +
 							Uri.EscapeDataString(authorization.AccessToken));
 
