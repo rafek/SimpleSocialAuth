@@ -78,10 +78,10 @@
     <EmbeddedResource Include="Images\auth_logos.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Scripts\SimpleSocialAuth.js" />
+    <EmbeddedResource Include="Scripts\simplesocialauth.js" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Stylesheets\SimpleSocialAuth.css" />
+    <EmbeddedResource Include="Stylesheets\simplesocialauth.css" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SimpleSocialAuth.Core\SimpleSocialAuth.Core.csproj">

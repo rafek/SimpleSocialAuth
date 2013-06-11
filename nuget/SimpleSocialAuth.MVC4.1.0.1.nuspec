@@ -26,11 +26,12 @@
 		<!--<file src="content\web.config.transform" target="content\web.config.transform" />-->
 
 		<file src="content.mvc4\SimpleAuthController.cs.pp" target="content\Controllers\SimpleAuthController.cs.pp" />
+		<file src="content.mvc4\SimpleSocialAuthBundleConfig.cs.pp" target="content\App_Start\SimpleAuthController.cs.pp" />
 		<file src="content.mvc4\LogIn.cshtml" target="content\Views\SimpleAuth\LogIn.cshtml" />
 		<file src="..\src\SimpleSocialAuth.Mvc4\bin\Release\SimpleSocialAuth.Core.dll" target="lib\net40-full\SimpleSocialAuth.Core.dll" />
 		<file src="..\src\SimpleSocialAuth.Mvc4\bin\Release\SimpleSocialAuth.Mvc4.dll" target="lib\net40-full\SimpleSocialAuth.Mvc4.dll" />
-		<file src="..\src\SimpleSocialAuth.Mvc4\Scripts\SimpleSocialAuth.js" target="content\Scripts\SimpleSocialAuth.js" />
-		<file src="..\src\SimpleSocialAuth.Mvc4\Stylesheets\SimpleSocialAuth.css" target="content\Content\SimpleSocialAuth.css" />
+		<file src="..\src\SimpleSocialAuth.Mvc4\Scripts\simplesocialauth.js" target="content\Scripts\simplesocialauth.js" />
+		<file src="..\src\SimpleSocialAuth.Mvc4\Stylesheets\simplesocialauth.css" target="content\Content\simplesocialauth.css" />
 		<file src="tools\install.ps1" target="tools\install.ps1" />
 	</files>
 </package>
