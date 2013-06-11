@@ -59,10 +59,7 @@ namespace SimpleSocialAuth.Core.Consumers
 					{
 						if (signInConsumer == null)
 						{
-							signInConsumer =
-								new WebConsumer(
-									SignInWithTwitterServiceDescription,
-									ShortTermUserSessionTokenManager);
+							signInConsumer = new WebConsumer(SignInWithTwitterServiceDescription, ShortTermUserSessionTokenManager);
 						}
 					}
 				}
@@ -99,14 +96,14 @@ namespace SimpleSocialAuth.Core.Consumers
 			}
 		}
 
-		public OutgoingWebResponse StartSignInWithTwitter(Uri callback = null)
+		public OutgoingWebResponse StartSignInWithTwitter(Uri callbackUri = null)
 		{
-			if (callback == null)
+			if (callbackUri == null)
 			{
-				callback = MessagingUtilities.GetRequestUrlFromContext().StripQueryArgumentsWithPrefix("oauth_");
+				callbackUri = MessagingUtilities.GetRequestUrlFromContext().StripQueryArgumentsWithPrefix("oauth_");
 			}
 
-			var request = TwitterSignIn.PrepareRequestUserAuthorization(callback, null, null);
+			var request = TwitterSignIn.PrepareRequestUserAuthorization(callbackUri, null, null);
 
 			return TwitterSignIn.Channel.PrepareResponse(request);
 		}
