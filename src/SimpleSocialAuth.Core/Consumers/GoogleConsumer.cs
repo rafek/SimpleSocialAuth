@@ -15,8 +15,10 @@ namespace SimpleSocialAuth.Core.Consumers
         public GoogleConsumer(string clientIdentifier, string clientSecret)
             : base(GoogleDescription, clientIdentifier, clientSecret)
         {
-            AuthorizationTracker =
-                new AuthorizationTracker();
+            AuthorizationTracker = new AuthorizationTracker();
+
+            // See https://groups.google.com/forum/?fromgroups#!topic/dotnetopenid/ibzRfE4TpB0
+            ClientCredentialApplicator = ClientCredentialApplicator.PostParameter(clientSecret);
         }
     }
 }
