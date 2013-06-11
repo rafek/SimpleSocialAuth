@@ -26,7 +26,7 @@
 		<!--<file src="content\web.config.transform" target="content\web.config.transform" />-->
 
 		<file src="content.mvc4\SimpleAuthController.cs.pp" target="content\Controllers\SimpleAuthController.cs.pp" />
-		<file src="content.mvc4\SimpleSocialAuthBundleConfig.cs.pp" target="content\App_Start\SimpleAuthController.cs.pp" />
+		<file src="content.mvc4\SimpleSocialAuthBundleConfig.cs.pp" target="content\App_Start\SimpleSocialAuthBundleConfig.cs.pp" />
 		<file src="content.mvc4\LogIn.cshtml" target="content\Views\SimpleAuth\LogIn.cshtml" />
 		<file src="..\src\SimpleSocialAuth.Mvc4\bin\Release\SimpleSocialAuth.Core.dll" target="lib\net40-full\SimpleSocialAuth.Core.dll" />
 		<file src="..\src\SimpleSocialAuth.Mvc4\bin\Release\SimpleSocialAuth.Mvc4.dll" target="lib\net40-full\SimpleSocialAuth.Mvc4.dll" />
