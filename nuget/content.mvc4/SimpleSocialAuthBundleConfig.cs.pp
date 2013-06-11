@@ -9,8 +9,8 @@ namespace $rootnamespace$.App_Start
 			bundles.Add(new ScriptBundle("~/scripts/simplesocialauth")
 				.Include("~/Scripts/simplesocialauth.js"));
 
-			bundles.Add(new StyleBundle("~/content/simplesocialauth").Include(
-				"~/Content/simplesocialauth.css"));
+			bundles.Add(new StyleBundle("~/content/simplesocialauth")
+				.Include("~/Content/simplesocialauth.css"));
 		}
 	}
 }

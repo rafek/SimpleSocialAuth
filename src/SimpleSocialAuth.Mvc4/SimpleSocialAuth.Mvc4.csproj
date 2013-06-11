@@ -75,7 +75,7 @@
     <Compile Include="RequestAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Images\auth_logos.png" />
+    <EmbeddedResource Include="Images\simplesocialauthlogos.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Scripts\simplesocialauth.js" />
