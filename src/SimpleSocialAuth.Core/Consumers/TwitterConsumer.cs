@@ -13,15 +13,15 @@ namespace SimpleSocialAuth.Core.Consumers
 				{
 					RequestTokenEndpoint =
 						new MessageReceivingEndpoint(
-							"http://twitter.com/oauth/request_token",
+							"https://twitter.com/oauth/request_token",
 							HttpDeliveryMethods.GetRequest | HttpDeliveryMethods.AuthorizationHeaderRequest),
 					UserAuthorizationEndpoint =
 						new MessageReceivingEndpoint(
-							"http://twitter.com/oauth/authenticate",
+							"https://twitter.com/oauth/authenticate",
 							HttpDeliveryMethods.GetRequest | HttpDeliveryMethods.AuthorizationHeaderRequest),
 					AccessTokenEndpoint =
 						new MessageReceivingEndpoint(
-							"http://twitter.com/oauth/access_token",
+							"https://twitter.com/oauth/access_token",
 							HttpDeliveryMethods.GetRequest | HttpDeliveryMethods.AuthorizationHeaderRequest),
 					TamperProtectionElements =
 						new ITamperProtectionChannelBindingElement[]
