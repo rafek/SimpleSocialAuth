@@ -1,17 +1,17 @@
-﻿namespace SimpleSocialAuth.Core
-{
-    public static class Utils
-    {
-        public static string GetUrlBase(IHttpRequest request)
-        {
-            if (request.Url == null)
-            {
-                return null;
-            }
+﻿using System;
 
-            return
-                request.Url.Scheme + "://" +
-                request.Url.Authority;
-        }
-    }
+namespace SimpleSocialAuth.Core
+{
+	public static class Utils
+	{
+		public static string GetUrlBase(Uri uri)
+		{
+			if (uri == null)
+			{
+				return null;
+			}
+
+			return uri.Scheme + "://" + uri.Authority;
+		}
+	}
 }

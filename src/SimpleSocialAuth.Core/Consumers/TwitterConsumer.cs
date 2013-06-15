@@ -6,146 +6,123 @@ using DotNetOpenAuth.OAuth.ChannelElements;
 
 namespace SimpleSocialAuth.Core.Consumers
 {
-    internal class TwitterConsumer
-    {
-        public static readonly ServiceProviderDescription SignInWithTwitterServiceDescription =
-            new ServiceProviderDescription
-                {
-                    RequestTokenEndpoint =
-                        new MessageReceivingEndpoint(
-                            "http://twitter.com/oauth/request_token",
-                            HttpDeliveryMethods.GetRequest | HttpDeliveryMethods.AuthorizationHeaderRequest),
-                    UserAuthorizationEndpoint =
-                        new MessageReceivingEndpoint(
-                            "http://twitter.com/oauth/authenticate",
-                            HttpDeliveryMethods.GetRequest | HttpDeliveryMethods.AuthorizationHeaderRequest),
-                    AccessTokenEndpoint =
-                        new MessageReceivingEndpoint(
-                            "http://twitter.com/oauth/access_token",
-                            HttpDeliveryMethods.GetRequest | HttpDeliveryMethods.AuthorizationHeaderRequest),
-                    TamperProtectionElements =
-                        new ITamperProtectionChannelBindingElement[]
-                            {
-                                new HmacSha1SigningBindingElement()
-                            },
-                };
+	internal class TwitterConsumer
+	{
+		public static readonly ServiceProviderDescription SignInWithTwitterServiceDescription =
+			new ServiceProviderDescription
+				{
+					RequestTokenEndpoint =
+						new MessageReceivingEndpoint(
+							"https://twitter.com/oauth/request_token",
+							HttpDeliveryMethods.GetRequest | HttpDeliveryMethods.AuthorizationHeaderRequest),
+					UserAuthorizationEndpoint =
+						new MessageReceivingEndpoint(
+							"https://twitter.com/oauth/authenticate",
+							HttpDeliveryMethods.GetRequest | HttpDeliveryMethods.AuthorizationHeaderRequest),
+					AccessTokenEndpoint =
+						new MessageReceivingEndpoint(
+							"https://twitter.com/oauth/access_token",
+							HttpDeliveryMethods.GetRequest | HttpDeliveryMethods.AuthorizationHeaderRequest),
+					TamperProtectionElements =
+						new ITamperProtectionChannelBindingElement[]
+							{
+								new HmacSha1SigningBindingElement()
+							},
+				};
 
-        private static WebConsumer signInConsumer;
-        private static readonly object signInConsumerInitLock = new object();
-        private readonly ISessionStorage _sessionStorage;
+		private static WebConsumer signInConsumer;
+		private static readonly object signInConsumerInitLock = new object();
+		private readonly ISessionStorage _sessionStorage;
 
-        public TwitterConsumer(ISessionStorage sessionStorage)
-        {
-            _sessionStorage = sessionStorage;
-        }
+		public TwitterConsumer(ISessionStorage sessionStorage)
+		{
+			_sessionStorage = sessionStorage;
+		}
 
-        private bool IsTwitterConsumerConfigured
-        {
-            get
-            {
-                return
-                    !string.IsNullOrEmpty(ConfigurationManager.AppSettings["twitterConsumerKey"]) &&
-                    !string.IsNullOrEmpty(ConfigurationManager.AppSettings["twitterConsumerSecret"]);
-            }
-        }
+		private bool IsTwitterConsumerConfigured
+		{
+			get
+			{
+				return
+					!string.IsNullOrEmpty(ConfigurationManager.AppSettings["twitterConsumerKey"]) &&
+					!string.IsNullOrEmpty(ConfigurationManager.AppSettings["twitterConsumerSecret"]);
+			}
+		}
 
-        private WebConsumer TwitterSignIn
-        {
-            get
-            {
-                if (signInConsumer == null)
-                {
-                    lock (signInConsumerInitLock)
-                    {
-                        if (signInConsumer == null)
-                        {
-                            signInConsumer =
-                                new WebConsumer(
-                                    SignInWithTwitterServiceDescription,
-                                    ShortTermUserSessionTokenManager);
-                        }
-                    }
-                }
+		private WebConsumer TwitterSignIn
+		{
+			get
+			{
+				if (signInConsumer == null)
+				{
+					lock (signInConsumerInitLock)
+					{
+						if (signInConsumer == null)
+						{
+							signInConsumer = new WebConsumer(SignInWithTwitterServiceDescription, ShortTermUserSessionTokenManager);
+						}
+					}
+				}
 
-                return signInConsumer;
-            }
-        }
+				return signInConsumer;
+			}
+		}
 
-        private InMemoryTokenManager ShortTermUserSessionTokenManager
-        {
-            get
-            {
-                var tokenManager =
-                    (InMemoryTokenManager) _sessionStorage.Load("TwitterShortTermUserSessionTokenManager");
+		private InMemoryTokenManager ShortTermUserSessionTokenManager
+		{
+			get
+			{
+				var tokenManager =
+					(InMemoryTokenManager)_sessionStorage.Load("TwitterShortTermUserSessionTokenManager");
 
-                if (tokenManager == null)
-                {
-                    var consumerKey =
-                        ConfigurationManager.AppSettings["twitterConsumerKey"];
+				if (tokenManager == null)
+				{
+					var consumerKey = ConfigurationManager.AppSettings["twitterConsumerKey"];
+					var consumerSecret = ConfigurationManager.AppSettings["twitterConsumerSecret"];
 
-                    var consumerSecret =
-                        ConfigurationManager.AppSettings["twitterConsumerSecret"];
+					if (IsTwitterConsumerConfigured)
+					{
+						tokenManager = new InMemoryTokenManager(consumerKey, consumerSecret);
+						_sessionStorage.Store("TwitterShortTermUserSessionTokenManager", tokenManager);
+					}
+					else
+					{
+						throw new InvalidOperationException(
+							"No Twitter OAuth consumer key and secret could be found in web.config AppSettings.");
+					}
+				}
 
-                    if (IsTwitterConsumerConfigured)
-                    {
-                        tokenManager =
-                            new InMemoryTokenManager(consumerKey, consumerSecret);
+				return tokenManager;
+			}
+		}
 
-                        _sessionStorage.Store("TwitterShortTermUserSessionTokenManager", tokenManager);
-                    }
-                    else
-                    {
-                        throw new InvalidOperationException(
-                            "No Twitter OAuth consumer key and secret could be found in web.config AppSettings.");
-                    }
-                }
+		public OutgoingWebResponse StartSignInWithTwitter(Uri callbackUri = null)
+		{
+			if (callbackUri == null)
+			{
+				callbackUri = MessagingUtilities.GetRequestUrlFromContext().StripQueryArgumentsWithPrefix("oauth_");
+			}
 
-                return
-                    tokenManager;
-            }
-        }
+			var request = TwitterSignIn.PrepareRequestUserAuthorization(callbackUri, null, null);
 
-        public OutgoingWebResponse StartSignInWithTwitter(Uri callback = null)
-        {
-            if (callback == null)
-            {
-                callback =
-                    MessagingUtilities
-                        .GetRequestUrlFromContext()
-                        .StripQueryArgumentsWithPrefix("oauth_");
-            }
+			return TwitterSignIn.Channel.PrepareResponse(request);
+		}
 
-            var request =
-                TwitterSignIn
-                    .PrepareRequestUserAuthorization(callback, null, null);
+		public bool TryFinishSignInWithTwitter(out string screenName, out int userId)
+		{
+			screenName = null;
+			userId = 0;
 
-            return
-                TwitterSignIn
-                    .Channel
-                    .PrepareResponse(request);
-        }
+			var response = TwitterSignIn.ProcessUserAuthorization();
 
-        public bool TryFinishSignInWithTwitter(out string screenName, out int userId)
-        {
-            screenName = null;
-            userId = 0;
+			if (response == null)
+			{
+				return false;
+			}
 
-            var response =
-                TwitterSignIn
-                    .ProcessUserAuthorization();
-
-            if (response == null)
-            {
-                return false;
-            }
-
-            screenName =
-                response.ExtraData["screen_name"];
-
-            userId =
-                int.Parse(response.ExtraData["user_id"]);
-
-            return true;
-        }
-    }
+			screenName = response.ExtraData["screen_name"];
+			userId = int.Parse(response.ExtraData["user_id"]);
+			return true;
+		}
+	}
 }

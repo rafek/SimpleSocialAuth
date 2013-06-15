@@ -14,6 +14,33 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{2F355B
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{415946F4-2526-4B13-8F67-CB42C5F72739}"
+	ProjectSection(SolutionItems) = preProject
+		..\nuget\SimpleSocialAuth.MVC3.1.0.1.nuspec = ..\nuget\SimpleSocialAuth.MVC3.1.0.1.nuspec
+		..\nuget\SimpleSocialAuth.MVC4.1.0.1.nuspec = ..\nuget\SimpleSocialAuth.MVC4.1.0.1.nuspec
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "content.mvc3", "content.mvc3", "{B153952A-5808-46B4-A2C0-2FA1A7C7A49E}"
+	ProjectSection(SolutionItems) = preProject
+		..\nuget\content.mvc3\LogIn.cshtml = ..\nuget\content.mvc3\LogIn.cshtml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "content.mvc4", "content.mvc4", "{2E0EFE72-D86E-48A7-814D-A44F1100A2BF}"
+	ProjectSection(SolutionItems) = preProject
+		..\nuget\content.mvc4\LogIn.cshtml = ..\nuget\content.mvc4\LogIn.cshtml
+		..\nuget\content.mvc4\SimpleSocialAuthBundleConfig.cs.pp = ..\nuget\content.mvc4\SimpleSocialAuthBundleConfig.cs.pp
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{546A9A81-1097-4571-A525-57E2125F294E}"
+	ProjectSection(SolutionItems) = preProject
+		..\nuget\tools\install.ps1 = ..\nuget\tools\install.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "content.common", "content.common", "{A3C1BC35-F499-4A9E-B651-188DE4D1CCC0}"
+	ProjectSection(SolutionItems) = preProject
+		..\nuget\content.common\SimpleAuthController.cs.pp = ..\nuget\content.common\SimpleAuthController.cs.pp
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,5 +62,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B153952A-5808-46B4-A2C0-2FA1A7C7A49E} = {415946F4-2526-4B13-8F67-CB42C5F72739}
+		{2E0EFE72-D86E-48A7-814D-A44F1100A2BF} = {415946F4-2526-4B13-8F67-CB42C5F72739}
+		{546A9A81-1097-4571-A525-57E2125F294E} = {415946F4-2526-4B13-8F67-CB42C5F72739}
+		{A3C1BC35-F499-4A9E-B651-188DE4D1CCC0} = {415946F4-2526-4B13-8F67-CB42C5F72739}
 	EndGlobalSection
 EndGlobal

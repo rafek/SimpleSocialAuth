@@ -1,0 +1,24 @@
+﻿@using SimpleSocialAuth.Mvc4
+
+@{
+    ViewBag.Title = "LogIn";
+}
+
+<h2>LogIn</h2>
+
+@Styles.Render("~/Content/SimpleSocialAuth")
+@Html.RenderAuthWarnings()
+
+@if (TempData["authError"] != null)
+{
+  <p class="error-messasge">
+    @TempData["authError"]
+  </p>
+}
+
+@using (Html.BeginForm("Authenticate", "SimpleAuth", FormMethod.Post, new { id = "authForm" }))
+{
+  @Html.AuthButtons()
+}
+
+@Scripts.Render("~/Scripts/SimpleSocialAuth")

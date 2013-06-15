@@ -1,5 +1,0 @@
-D:\projects\csharp\Gauffin\SimpleSocialAuth\src\SimpleSocialAuth.MVC3\obj\Debug\SimpleSocialAuth.MVC3.csprojResolveAssemblyReference.cache
-D:\projects\csharp\Gauffin\SimpleSocialAuth\bin\Debug\SimpleSocialAuth.MVC3.dll
-D:\projects\csharp\Gauffin\SimpleSocialAuth\bin\Debug\SimpleSocialAuth.MVC3.pdb
-D:\projects\csharp\Gauffin\SimpleSocialAuth\src\SimpleSocialAuth.MVC3\obj\Debug\SimpleSocialAuth.MVC3.dll
-D:\projects\csharp\Gauffin\SimpleSocialAuth\src\SimpleSocialAuth.MVC3\obj\Debug\SimpleSocialAuth.MVC3.pdb

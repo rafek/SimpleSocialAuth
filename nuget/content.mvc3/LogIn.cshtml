@@ -1,4 +1,6 @@
 ﻿@using SimpleSocialAuth.MVC3
+<link href-="~/Content/simplesocialauth.css" rel="stylesheet"/>
+<script src="~/Scripts/simplesocialauth.js"></script>
 
 @{
     ViewBag.Title = "LogIn";
@@ -6,8 +8,6 @@
 
 <h2>LogIn</h2>
 
-@Html.RenderAuthStylesheet()
-@Html.RenderAuthScript()
 @Html.RenderAuthWarnings()
 
 @if (TempData["authError"] != null)
