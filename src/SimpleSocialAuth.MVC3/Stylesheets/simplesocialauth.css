@@ -1,0 +1,29 @@
+﻿.simpleAuthButton
+{
+    width: 100px;
+    margin: 5px;
+    height: 60px;
+    float: left;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #DDDDDD;
+    text-indent: -9999px;
+}
+
+.simpleAuthButton.twitter
+{
+    background-image: url('/Images/simplesocialauthlogos.png');
+    background-position: -1px -249px;
+}
+
+.simpleAuthButton.facebook
+{
+    background-image: url('/Images/simplesocialauthlogos.png');
+    background-position: -1px -187px;
+}
+
+.simpleAuthButton.google
+{
+    background-image: url('/Images/simplesocialauthlogos.png');
+    background-position: -1px -1px;
+}

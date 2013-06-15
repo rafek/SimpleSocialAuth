@@ -1,7 +1,7 @@
 [Oo]bj/
 [Bb]in/
 *.user
-/TestResults
+TestResults/
 *.vspscc
 *.vssscc
 deploy
@@ -13,9 +13,9 @@ _ReSharper.*
 *.csproj.user
 *[Rr]e[Ss]harper.user
 _ReSharper.*
-src/
-packages/*
-artifacts/*
+
+packages/
+artifacts/
 msbuild.log
 PublishProfiles/
 *.psess
